@@ -22,15 +22,16 @@ export class Potter {
             if(!team) {
                 this.cart.push([books[i]]);
             }
-
-        
         }
         for(let i=0; i<this.cart.length; i++) 
         {
-            this.pay += this.cart[i].length * this.unitprice * this.discount[this.cart[i].length-1];
+            this.pay += this.calPrice(i);
         }
     return this.pay;
     }
+    private calPrice(i:number) 
+    {
+        return this.cart[i].length * this.unitprice * this.discount[this.cart[i].length-1];
+    }
 }
-
 
