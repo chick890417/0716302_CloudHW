@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "potter": "apps/potter",
+    "potter-e2e": "apps/potter-e2e"
+  }
+}
