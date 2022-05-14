@@ -1,6 +1,6 @@
 export class Potter {
     get price()
     {
-        return -1;
+        return 0;
     }
 }
