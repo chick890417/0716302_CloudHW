@@ -13,4 +13,8 @@ describe('Potter', () => {
     const pay=potter.price(1);
     expect(pay).toBe(8);
   });
+  it('buy 2 diff book', () => {
+    const pay=potter.price(2);
+    expect(pay).toBe(15.2);
+  });
 });
