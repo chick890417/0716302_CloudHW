@@ -31,4 +31,8 @@ describe('Potter', () => {
     let books=[0,1,2,3,4];
     expect(potter.price(books)).toBe(8*5*0.75);
   });
+  it('buy 3 same book', () => {
+    let books=[1,1,1];
+    expect(potter.price(books)).toBe(8*3);
+  });
 });
