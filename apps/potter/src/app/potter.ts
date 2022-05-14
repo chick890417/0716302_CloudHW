@@ -16,7 +16,7 @@ export class Potter {
                 {
                     team = 1;
                     this.cart[j].push(books[i]);
-                    if(this.cart[j].length==5 && this.cart.length>j+1 && this.cart[j+1].length==3 )
+                    if( this.morediscount(i,j))
                     {
                         this.cart[j].pop();
                         this.cart[j+1].push(books[i]);
@@ -37,6 +37,12 @@ export class Potter {
     private calPrice(i:number) 
     {
         return this.cart[i].length * this.unitprice * this.discount[this.cart[i].length-1];
+    }
+    private morediscount(i:number,j:number)
+    {
+        if(this.cart[j].length==5 && this.cart.length>j+1 && this.cart[j+1].length==3)
+        {return true;}
+        return false; 
     }
 }
 
