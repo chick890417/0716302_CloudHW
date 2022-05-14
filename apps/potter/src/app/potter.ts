@@ -1,6 +1,9 @@
 export class Potter {
-    get price()
+    price(num: number)
     {
-        return 0;
+        let pay=0
+        pay= num*8
+        return pay;
+
     }
 }
