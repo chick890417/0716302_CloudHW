@@ -16,6 +16,11 @@ export class Potter {
                 {
                     team = 1;
                     this.cart[j].push(books[i]);
+                    if(this.cart[j].length==5 && this.cart.length>j+1 && this.cart[j+1].length==3 )
+                    {
+                        this.cart[j].pop();
+                        this.cart[j+1].push(books[i]);
+                    }
                     break;
                 }
             }
