@@ -16,21 +16,27 @@ export class Potter {
                 {
                     team = 1;
                     this.cart[j].push(books[i]);
+                    if(this.cart[j].length==5 && this.cart.length>j+1 && this.cart[j+1].length==3 )
+                    {
+                        this.cart[j].pop();
+                        this.cart[j+1].push(books[i]);
+                    }
                     break;
                 }
             }
             if(!team) {
                 this.cart.push([books[i]]);
             }
-
-        
         }
         for(let i=0; i<this.cart.length; i++) 
         {
-            this.pay += this.cart[i].length * this.unitprice * this.discount[this.cart[i].length-1];
+            this.pay += this.calPrice(i);
         }
     return this.pay;
     }
+    private calPrice(i:number) 
+    {
+        return this.cart[i].length * this.unitprice * this.discount[this.cart[i].length-1];
+    }
 }
-
 

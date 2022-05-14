@@ -35,4 +35,24 @@ describe('Potter', () => {
     let books=[1,1,1];
     expect(potter.price(books)).toBe(8*3);
   });
+  it('buy 2 same book & 1 diff', () => {
+    let books=[0,0,1];
+    expect(potter.price(books)).toBe(8 + (8 * 2 * 0.95));
+  });
+  it('buy 2 same book & 2 same book', () => {
+    let books=[0,0,1,1];
+    expect(potter.price(books)).toBe(2*(8 * 2 * 0.95));
+  });
+  it('buy 2 same book & 1 diff & 2 same & 1 diff', () => {
+    let books=[0,0,1,2,2,3];
+    expect(potter.price(books)).toBe((8 * 4 * 0.8) + (8 * 2 * 0.95));
+  });
+  it('buy 1 diff & 2 same & 1 diff & 1 diff & 1 diff', () => {
+    let books=[0,1,1,2,3,4];
+    expect(potter.price(books)).toBe(8 + (8 * 5 * 0.75));
+  });
+  it('buy 2 same & 2 same & 2 same & 1 diff & 1 diff', () => {
+    let books=[0,0,1,1,2,2,3,4];
+    expect(potter.price(books)).toBe(2 * (8 * 4 * 0.8));
+  });
 });
